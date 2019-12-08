@@ -1,0 +1,13 @@
+server:
+  servlet.context-path:
+  port: 8080
+
+ribbon.ReadTimeout: 60000
+
+zuul:
+  ignoredServices: '*'
+  routes:
+    ms-configuration-service:
+      path: /config/**
+      serviceId: ms-configuration-service
+      strip-prefix: true
